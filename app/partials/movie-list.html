@@ -1,0 +1,14 @@
+
+<!-- Results grid column (12 cols, hidden, shown when a keyword is selected ) -->
+
+<div ng-repeat="movie in movies" class="large-4 small-6 columns">
+
+    <img class="movie-img" src="{{movie.imgUrl}}">
+
+    <div class="panel movie-panel">
+        <h5>{{movie.title}}</h5>
+        <h6 class="subheader">{{movie.date | date:'MMM yyyy'}}</h6>
+        <a class="btn-add" href="#"><img src="img/add-off.png"/></a>
+    </div>
+
+</div>

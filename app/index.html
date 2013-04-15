@@ -1,0 +1,178 @@
+<!doctype html>
+
+<html lang="en" ng-app="catharsisApp">
+
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en"> <!--<![endif]-->
+<head>
+
+    <title>CATHARSIS</title>
+
+    <!-- Meta tags and icons -->
+    <meta charset="utf-8" />
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <meta name="copyright" content="" />
+
+    <!-- Links to icons -->
+    <link rel="icon" href="imgs/favicon.ico" type="image/x-icon" />
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="css/normalize.css" type="text/css" />
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Oswald" type="text/css">
+    <link rel="stylesheet" href="css/foundation.min.css" type="text/css" />
+    <link rel="stylesheet" href="css/app.css" type="text/css" />
+
+    <!-- Header JS Files -->
+    <script src="lib/vendor/custom.modernizr.js"></script>
+
+</head>
+<body>
+
+
+    <!-- heading & top bar row -->
+    <div class="row title-row">
+
+        <!-- heading & top bar columns -->
+        <div ng-controller="BreadcrumbController" class="large-12 columns">
+
+            <!-- Heading -->
+            <div class="title-row">
+                <a href="/app/"><h1 class="title-h app-name">Catharsis</h1></a>
+                <h2 class="title-h genre-breadcrumb">{{genre}}</h2>
+                <h3 class="title-h keyword-breadcrumb">{{keyword}}</h3>
+            </div>
+
+            <!-- Top Bar -->
+            <nav class="top-bar rounded">
+
+                <!-- Title area -->
+                <ul class="title-area">
+                    <li class="name"><h1 class="top-bar-title">Select your party theme</h1></li>
+                    <!-- menu placeholder for mobile sizes -->
+                    <li class="toggle-topbar menu-icon"><a href="#"><span>menu</span></a></li>
+                </ul>
+
+                <!-- Nav dropdowns -->
+                <section class="top-bar-section">
+
+                    <!-- Menu options -->
+                    <ul class="left">
+
+                        <!-- Movies for men -->
+                        <li class="divider"></li>
+                        <li class="has-dropdown">
+                            <a class="top-bar-menu-title" href="#">MAN CAVE</a>
+                            <ul class="dropdown">
+                              <li><a href="#/movies/guys/fights" ng-click="setTitle('MAN CAVE','Fights')">Fights</a></li>
+                              <li><a href="#/movies/guys/carchases" ng-click="setTitle('MAN CAVE','Car Chases')">Car Chases</a></li>
+                              <li><a href="#/movies/guys/robberies" ng-click="setTitle('MAN CAVE','Robberies')">Robberies</a></li>
+                              <li><a href="#/movies/guys/war" ng-click="setTitle('MAN CAVE','War')">War</a></li>
+                              <li><a href="#/movies/guys/sports" ng-click="setTitle('MAN CAVE','Sports')">Sports</a></li>
+                              <li><a href="#/movies/guys/westerns" ng-click="setTitle('MAN CAVE','Westerns')">Westerns</a></li>
+                            </ul>
+                        </li>
+
+                        <!-- Movies for women -->
+                        <li class="divider"></li>
+                        <li class="has-dropdown">
+                            <a class="top-bar-menu-title" href="#">LADIES TIME</a>
+                            <ul class="dropdown">
+                              <li><a href="#/movies/ladies/musicals" ng-click="setTitle('LADIES TIME','Musicals')">Musicals</a></li>
+                              <li><a href="#/movies/ladies/comedy" ng-click="setTitle('LADIES TIME','Comedy')">Comedy</a></li>
+                              <li><a href="#/movies/ladies/romance" ng-click="setTitle('LADIES TIME','Romance')">Romance</a></li>
+                              <li><a href="#/movies/ladies/adventure" ng-click="setTitle('LADIES TIME','Adventure')">Adventure</a></li>
+                              <li><a href="#/movies/ladies/drama" ng-click="setTitle('LADIES TIME','Drama')">Drama</a></li>
+                              <li><a href="#/movies/ladies/spituality" ng-click="setTitle('LADIES TIME','Spituality')">Spituality</a></li>
+                            </ul>
+                        </li>
+
+                        <!-- Movies for kids -->
+                        <li class="divider"></li>
+                        <li class="has-dropdown">
+                            <a class="top-bar-menu-title" href="#">KIDS RULE</a>
+                            <ul class="dropdown">
+                              <li><a  href="#/movies/kids/animation" ng-click="setTitle('KIDS RULE','Animation')">Animation</a></li>
+                              <li><a  href="#/movies/kids/adventure" ng-click="setTitle('KIDS RULE','Adventure')">Adventure</a></li>
+                              <li><a  href="#/movies/kids/fantasy" ng-click="setTitle('KIDS RULE','Fantasy')">Fantasy</a></li>
+                              <li><a  href="#/movies/kids/scifi" ng-click="setTitle('KIDS RULE','Sci Fi')">Sci Fi</a></li>
+                              <li><a  href="#/movies/kids/mystery" ng-click="setTitle('KIDS RULE','Mystery')">Mystery</a></li>
+                              <li><a  href="#/movies/kids/comedy" ng-click="setTitle('KIDS RULE','Comedy')">Comedy</a></li>
+                            </ul>
+                        </li>
+
+                        <!-- Movies for mixed adults -->
+                        <li class="divider"></li>
+                        <li class="has-dropdown">
+                            <a class="top-bar-menu-title" href="#">ADULT CROWD</a>
+                            <ul class="dropdown">
+                              <li><a  href="#/movies/adults/Drama" ng-click="setTitle('ADULT CROWD','Drama')">Drama</a></li>
+                              <li><a  href="#/movies/adults/Adventure" ng-click="setTitle('ADULT CROWD','Adventure')">Adventure</a></li>
+                              <li><a  href="#/movies/adults/Fantasy" ng-click="setTitle('ADULT CROWD','Fantasy')">Fantasy</a></li>
+                              <li><a  href="#/movies/adults/scifi" ng-click="setTitle('ADULT CROWD','Sci Fi')">Sci Fi</a></li>
+                              <li><a  href="#/movies/adults/westerns" ng-click="setTitle('ADULT CROWD','Westerns')">Westerns</a></li>
+                              <li><a  href="#/movies/adults/comedy" ng-click="setTitle('ADULT CROWD','Comedy')">Comedy</a></li>
+                            </ul>
+                        </li>
+
+                        <!-- Movies for family -->
+                        <li class="divider"></li>
+                        <li class="has-dropdown">
+                            <a class="top-bar-menu-title" href="#">FAMILY EVENT</a>
+                            <ul class="dropdown">
+                              <li><a  href="#/movies/family/family" ng-click="setTitle('FAMILY','Family')">Family</a></li>
+                              <li><a  href="#/movies/family/adventure" ng-click="setTitle('FAMILY','Adventure')">Adventure</a></li>
+                              <li><a  href="#/movies/family/fantasy" ng-click="setTitle('FAMILY','Fantasy')">Fantasy</a></li>
+                              <li><a  href="#/movies/family/scifi" ng-click="setTitle('FAMILY','Sci Fi')">Sci Fi</a></li>
+                              <li><a  href="#/movies/family/mystery" ng-click="setTitle('FAMILY','Mystery')">Mystery</a></li>
+                              <li><a  href="#/movies/family/comedy" ng-click="setTitle('FAMILY','Comedy')">Comedy</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="divider"></li>
+
+                    </ul> <!-- end of menu options -->
+
+                </section> <!-- nav dropdowns -->
+
+            </nav> <!-- top-bar -->
+
+        </div> <!-- columns -->
+
+    </div> <!-- row -->
+
+    <!-- End Top Bar -->
+
+
+    <!-- Angular Container -->
+    <div class="row">
+        <div ng-view class="large-12 columns"></div>
+    </div>
+
+
+    <!-- Third Party JS Files -->
+    <script src="lib/angular/angular.js"></script>
+    <script src="lib/angular/angular-resource.js"></script>
+    <script src="lib/vendor/jquery.js"></script>
+    <script src="lib/foundation.min.js"></script>
+    <script>$(document).foundation();</script>
+
+    <!-- Application JS Files -->
+
+    <!-- <script src="js/app-ui.js"></script> -->
+    <script src="js/app.js"></script>
+    <script src="js/services.js"></script>
+    <script src="js/controllers.js"></script>
+    <script src="js/filters.js"></script>
+    <script src="js/directives.js"></script>
+
+
+</body>
+</html>
