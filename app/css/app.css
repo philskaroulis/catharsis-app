@@ -46,6 +46,11 @@ body {
 
 
 /* initial visibility */
+.genre-breadcrumb,
+.keyword-breadcrumb {
+    display:none;
+}
+
 
 /* menu browse */
 

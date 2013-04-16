@@ -1,6 +1,6 @@
-from bottle import Bottle, run, route, static_file
+import bottle
+from bottle import run, route, static_file
 
-app = Bottle()
 
 @route('/')
 def get_root(filename='index.html'):
@@ -25,6 +25,10 @@ def get_lib(filename='foundation.min.js'):
 @route('/partials/<filename:path>')
 def get_partials(filename='note.txt'):
     return static_file(filename, root='./app/partials/')
+
+
+app = bottle.default_app()
+
 
 if __name__ == "__main__":
     run(host='0.0.0.0', port=8080, reloader = False)

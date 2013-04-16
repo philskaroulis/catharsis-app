@@ -21,12 +21,12 @@ angular.module('catharsisApp.controllers', []).
     }]).
     controller('BreadcrumbController', ['$scope',function($scope) {
 
-        $scope.genre ='';
-        $scope.keyword ='';
+        $scope.styleBreadcrumb = 'display:none';
 
         $scope.setTitle = function(genre,keyword) {
             $scope.genre = ' :: ' + genre;
             $scope.keyword =' :: ' + keyword;
+            $scope.styleBreadcrumb = 'display:inline';
         };
 
     }]);
