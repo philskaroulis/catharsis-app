@@ -47,14 +47,6 @@ body {
 
 /* initial visibility */
 
-/*#intro-genres,
-#intro-keywords,
-.keywords,
-#movies {
-    display: none;
-}
-*/
-
 /* menu browse */
 
 ul,li {
@@ -65,7 +57,6 @@ ul,li {
 
 #genres, #movies {
     min-height: 480px;
-    /*min-width: 140px;*/
 }
 
 .keywords{
@@ -132,10 +123,22 @@ ul,li {
     padding: 1.25em 1.25em 0.25em 1.25em !important;
 }
 
-.btn-add {
+
+ul.dropdown li a {
+    opacity: 0.95;
+    filter:alpha(opacity=95); /* IE8- */
+}
+
+.movie-btn {
     position:absolute;
-    right: 12px;
+    right: 25px;
     bottom: 30px;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+}
+
+.movie-added {
 }
 
 

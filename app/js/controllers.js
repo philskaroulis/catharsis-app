@@ -14,6 +14,10 @@ angular.module('catharsisApp.controllers', []).
             {title:'Redline', imgUrl:'http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/kFh9LOeCEiPeSWJToPwoVvPApFc.jpg',date:'2009-08-14',added:false}
         ];
 
+        $scope.toggleMembership = function(movie) {
+            movie.added = !movie.added;
+        };
+
     }]).
     controller('BreadcrumbController', ['$scope',function($scope) {
 

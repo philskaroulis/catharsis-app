@@ -3,11 +3,13 @@
 
 <div ng-repeat="movie in movies" class="large-4 small-6 columns">
 
-    <img class="movie-img" src="{{movie.imgUrl}}">
-
-    <div class="panel movie-panel">
-        <h5>{{movie.title}}</h5>
-        <h6 class="subheader">{{movie.date | date:'MMM yyyy'}}</h6>
+    <div class="{{{true:'movie-added', false:'movie-not-added'}[movie.added]}}">
+        <img class="movie-img" src="{{movie.imgUrl}}">
+        <div class="panel movie-panel">
+            <h5>{{movie.title}}</h5>
+            <h6 class="subheader">{{movie.date | date:'MMM yyyy'}}</h6>
+            <img ng-click="toggleMembership(movie)" ng-src="{{{true:'/img/remove-on.png', false:'/img/add-on.png'}[movie.added]}}" class="movie-btn" />
+        </div>
     </div>
 
 </div>
