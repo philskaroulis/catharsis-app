@@ -37,30 +37,32 @@
 <body>
 
 
-    <!-- heading & top bar row -->
-    <div class="row title-row">
+    <!-- top bar = heading + menu bar + playlist info -->
 
-        <!-- heading & top bar columns -->
-        <div ng-controller="BreadcrumbController" class="large-12 columns">
+    <!-- top bar row -->
+    <div class="row">
+
+        <!-- top bar columns -->
+        <div ng-controller="TopBarController" class="large-12 columns">
 
             <!-- Heading -->
             <div class="title-row">
                 <a href="/"><h1 class="title-h app-name">Catharsis</h1></a>
-                <h2 class="title-h genre-breadcrumb" style="{{styleBreadcrumb}}">{{genre}}</h2>
-                <h3 class="title-h keyword-breadcrumb" style="{{styleBreadcrumb}}">{{keyword}}</h3>
+                <h2 class="title-h genre-breadcrumb" style="{{titleStyle}}">{{genre}}</h2>
+                <h3 class="title-h keyword-breadcrumb" style="{{titleStyle}}">{{keyword}}</h3>
             </div>
 
-            <!-- Top Bar -->
+            <!-- Menu Bar -->
             <nav class="top-bar rounded">
 
-                <!-- Title area -->
+                <!-- Prompt area -->
                 <ul class="title-area">
-                    <li class="name"><h1 class="top-bar-title">Select your party theme</h1></li>
+                    <li class="name"><h1 class="top-bar-title">Select theme</h1></li>
                     <!-- menu placeholder for mobile sizes -->
                     <li class="toggle-topbar menu-icon"><a href="#"><span>menu</span></a></li>
                 </ul>
 
-                <!-- Nav dropdowns -->
+                <!-- Menu dropdowns -->
                 <section class="top-bar-section">
 
                     <!-- Menu options -->
@@ -113,9 +115,9 @@
                         <li class="has-dropdown">
                             <a class="top-bar-menu-title" href="#">ADULT CROWD</a>
                             <ul class="dropdown">
-                              <li><a  href="#/movies/adults/Drama" ng-click="setTitle('ADULT CROWD','Drama')">Drama</a></li>
-                              <li><a  href="#/movies/adults/Adventure" ng-click="setTitle('ADULT CROWD','Adventure')">Adventure</a></li>
-                              <li><a  href="#/movies/adults/Fantasy" ng-click="setTitle('ADULT CROWD','Fantasy')">Fantasy</a></li>
+                              <li><a  href="#/movies/adults/drama" ng-click="setTitle('ADULT CROWD','Drama')">Drama</a></li>
+                              <li><a  href="#/movies/adults/adventure" ng-click="setTitle('ADULT CROWD','Adventure')">Adventure</a></li>
+                              <li><a  href="#/movies/adults/fantasy" ng-click="setTitle('ADULT CROWD','Fantasy')">Fantasy</a></li>
                               <li><a  href="#/movies/adults/scifi" ng-click="setTitle('ADULT CROWD','Sci Fi')">Sci Fi</a></li>
                               <li><a  href="#/movies/adults/westerns" ng-click="setTitle('ADULT CROWD','Westerns')">Westerns</a></li>
                               <li><a  href="#/movies/adults/comedy" ng-click="setTitle('ADULT CROWD','Comedy')">Comedy</a></li>
@@ -137,16 +139,24 @@
                         </li>
 
                         <li class="divider"></li>
+                        <li class="playlist-link" ng-style="display:{{ {true:'inline',false:'none'}[playlistSize>0] }}"><a href="#/playlists/1">View playlist</a></li>
+
 
                     </ul> <!-- end of menu options -->
 
-                </section> <!-- nav dropdowns -->
+                </section> <!-- menu dropdowns -->
 
-            </nav> <!-- top-bar -->
+            </nav> <!-- menu bar -->
 
-        </div> <!-- columns -->
+            <!-- Playlist info -->
+            <div class="panel playlist">
+                <h4>Items selected: {{movieCount}}</h4>
+            </div>
 
-    </div> <!-- row -->
+
+        </div> <!-- top bar columns -->
+
+    </div> <!-- top bar row -->
 
     <!-- End Top Bar -->
 
